@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title %}Liste d'élèves{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="card my-5">
+					<div class="card-body">
+						<h1>Hello World</h1>
+						<a href="{{ path('add.students') }}" class="btn btn-primary">Ajouter un élève</a>
+						<table class="table table-responsive">
+							<tr>
+								<td>Nom</td>
+								<td>Prénom</td>
+								<td></td>
+							</tr>
+							{% for student in students %}
+							<tr>
+								<td>{{ student.firstname }}</td>
+								<td>{{ student.lastname }}</td>
+								<td><a href="{{ path('edit.students', {id: student.id}) }}" class="btn btn-primary">Éditer</a></td>
+							</tr>
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

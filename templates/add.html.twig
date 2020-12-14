@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %} Ajouter un élève{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="card my-5">
+					<div class="card-body bg-primary">
+						<h1 class="text-white">Ajouter un élève</h1>
+						<a href="{{ path('list.students') }}" class="btn btn-primary">Retourner à la liste</a>
+						{{ form_start(form) }}
+
+						{{ form_label(form.lastname) }}
+						{{ form_widget(form.lastname) }}
+
+						{{ form_row(form.firstname) }}
+						{{ form_row(form.grade) }}
+						<button type="submit" class="btn btn-primary">Valider</button>
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

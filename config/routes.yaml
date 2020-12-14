@@ -1,3 +1,11 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+list.students:
+    path: /
+    controller: App\Controller\Admin\StudentsController::index
+
+add.students:
+    path: /add
+    controller: App\Controller\Admin\StudentsController:add
+
+edit.students:
+    path: /edit/{id}
+    controller: App\Controller\Admin\StudentsController:edit
